@@ -1,3 +1,27 @@
+/**
+ * 
+ * Manipulating the DOM exercise.
+ * Exercise programmatically builds navigation,
+ * scrolls to anchors from navigation,
+ * and highlights section in viewport upon scrolling.
+ * 
+ * Dependencies: None
+ * 
+ * JS Version: ES2015/ES6
+ * 
+ * JS Standard: ESlint
+ * 
+*/
+
+/**
+ * Comments should be present at the beginning of each procedure and class.
+ * Great to have comments before crucial code sections within the procedure.
+*/
+
+/**
+ * Define Global Variables
+ * 
+*/
 const startingTime = performance.now(); //
 let sections = document.querySelectorAll('section'); // selecting all sections from the html
 let menu = document.getElementById('navbar__list'); // selecting the navigation menu contatiner to be filled by the list items
@@ -50,6 +74,7 @@ function scrollFunction() {
      menu.style.display = "block"; //show menu again in the top of the page
       }
 };
+
 // adding a button to scroll to top
 var mybutton = document.createElement("mybutton");   // Create a <button> element
 mybutton.innerHTML = "Top";                          // Insert text
@@ -62,7 +87,61 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // to get top of document in other browsers
 };
 
+//adding a function to check if user stopped scrolling down
+var isScrolling;
+
+// Listen for scroll events
+window.addEventListener('scroll', function() {
+
+   // Clear our timeout throughout the scroll
+   window.clearTimeout(isScrolling);
+
+   // Set a timeout to run after scrolling ends
+   isScrolling = setTimeout(function() {
+
+      // Run the callback
+      menu.style.display = "block"; //show menu again in the top of the page
+
+   }, 1000);//the count down timer 
+
+}, false);
+
 //check the performance of the page to get time load
 const endingTime = performance.now();// the second variable to check the performance
 console.log('This code took ' + (endingTime - startingTime) + ' milliseconds.');// substaracting the starting time form the ending time to get the time needed to load the page
-})};
+})};/**
+ * End Global Variables
+ * Start Helper Functions
+ * 
+*/
+
+
+
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+*/
+
+// build the nav
+
+
+// Add class 'active' to section when near top of viewport
+
+
+// Scroll to anchor ID using scrollTO event
+
+
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
+
+// Build menu 
+
+// Scroll to section on link click
+
+// Set sections as active
+
+
