@@ -46,19 +46,23 @@ sections.forEach((item) => {// looping over the sections
     selectorId = item.id;// taking each id carried in each section
    let scroller = document.getElementById(selectorId);//get the id from the section
    scroller.scrollIntoView({behavior:"smooth"});// using the id of the section to bring the section in the top of the page
-    };
+    
+  };
     // Add class 'active' to section when near top of viewport
  function scrollTo(){
    let sectionId=item.getAttribute("id");      //get the id  placed on each list item for the menubar
    sections.forEach((sectionId) => {          // loop for sectionsid to check for them 1 by 1
-    if (sectionId.getBoundingClientRect().top  >= 0 ){// if rule to check if the top of the section is appearing in the top of the page
+    if (sectionId.getBoundingClientRect().top  > -5 && sectionId.getBoundingClientRect().bottom < 1000){// if rule to check if the top of the section is appearing in the top of the page
           // to add the active class when appears in the top of the page
       sectionId.classList.add("your-active-class");
+      
+
  }
+
  else { // if the section is not on top of the page just removes the active class
    //remove the active class from section when it is not in the top of the page
    sectionId.classList.remove("your-active-class");
- }
+  }
 });
 };
 // When the user scrolls down  from the top of the document, show the button
@@ -72,6 +76,7 @@ function scrollFunction() {
       }
       else { // when reach the top of the page again
      menu.style.display = "block"; //show menu again in the top of the page
+     mybutton.style.display="none";
       }
 };
 
