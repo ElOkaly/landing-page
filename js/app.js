@@ -81,7 +81,7 @@ function scrollFunction() {
 };
 
 // adding a button to scroll to top
-var mybutton = document.createElement("mybutton");   // Create a <button> element
+const mybutton = document.createElement("mybutton");   // Create a <button> element
 mybutton.innerHTML = "Top";                          // Insert text
 document.body.appendChild(mybutton);                // Append <button> to <body>
 mybutton.classList.add("myBtn");                    // adding the styles to the button element
@@ -93,7 +93,7 @@ function topFunction() {
 };
 
 //adding a function to check if user stopped scrolling down
-var isScrolling;
+let isScrolling;
 
 // Listen for scroll events
 window.addEventListener('scroll', function() {
@@ -114,39 +114,4 @@ window.addEventListener('scroll', function() {
 //check the performance of the page to get time load
 const endingTime = performance.now();// the second variable to check the performance
 console.log('This code took ' + (endingTime - startingTime) + ' milliseconds.');// substaracting the starting time form the ending time to get the time needed to load the page
-})};/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-
+})};
